@@ -1,0 +1,13 @@
+{
+    "name": "rpilocator-notifier",
+    "version": "0.0.1",
+    "dependencies": {
+        "node-cron": "*",
+        "puppeteer": "^14.2.1",
+        "twilio": "*"
+    },
+    "devDependencies": {
+        "dotenv": "^16.0.1",
+        "prettier": "^2.0.2"
+    }
+}
