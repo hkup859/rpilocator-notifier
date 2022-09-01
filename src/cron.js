@@ -12,7 +12,7 @@ const toPhoneNumber = process.env.PERSONAL_PHONE_NUMBER || ''
 const client = require('twilio')(accountSid, authToken)
 
 
-cron.schedule('* * * * *', async function() {
+cron.schedule('* 6-23 * * *', async function() {
   console.log("---------------------------")
   console.log("Checking Raspberry Pi Stock")
 	let browser
