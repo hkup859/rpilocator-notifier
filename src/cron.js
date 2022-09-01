@@ -14,7 +14,7 @@ const client = require('twilio')(accountSid, authToken)
 
 cron.schedule('* 6-23 * * *', async function() {
   console.log("---------------------------")
-  console.log("Checking Raspberry Pi Stock")
+  console.log(`Checking Raspberry Pi Stock: ${new Date()}`)
 	let browser
 	try {
 		// Create Browser
