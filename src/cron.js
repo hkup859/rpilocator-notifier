@@ -15,8 +15,7 @@ let stockData = []
 
 
 cron.schedule('* 6-23 * * *', async function() {
-  console.log("---------------------------")
-  console.log(`Checking Raspberry Pi Stock: ${new Date()}`)
+  // console.log("---------------------------")
 	let browser
 	try {
 		// Create Browser
@@ -27,16 +26,16 @@ cron.schedule('* 6-23 * * *', async function() {
 
 		// Get Data
 		const stockStatus = await checkStock(browser)
-		console.log("stockStatus: ", stockStatus)
+    console.log(`Raspberry Pi Stock Status: ${new Date()}`, stockStatus)
 		if (stockStatus) await sendSMS(`Raspberry Pi Boards In Stock! Check ASAP at https://rpilocator.com/?country=US`)
 
-		console.log("Closing browser")
+		// console.log("Closing browser")
 		await browser.close()
 		
 		return
 	} catch(err) {
 		console.log(`checkStock failed: ${err}`)
-		console.log("Closing browser")
+		// console.log("Closing browser")
 		if (browser) 
 			await browser.close().catch(() => console.log("Browser close failure. Browser was never opened."))
 		return res.status(500).json(`checkStock failed: ${err}`)
