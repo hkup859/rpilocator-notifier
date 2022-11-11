@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
   rpilocator-notifier:
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile
